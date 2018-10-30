@@ -18,7 +18,7 @@ spec:
       - name: payment-ms
         image: eshopaksabfd.azurecr.io/payment-ms:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8091
         resources:
           requests:
             cpu: 250m
