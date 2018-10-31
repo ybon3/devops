@@ -8,5 +8,6 @@ spec:
   ports:
     # the port that this service should serve on
   - port: 8091
+    targetPort: 80
   selector:
     app: payment-ms
