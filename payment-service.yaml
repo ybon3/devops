@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: payment-ms
 spec:
-  loadBalancerIP: 52.224.164.99
-  type: LoadBalancer
+  #loadBalancerIP: 52.224.164.99
+  #type: LoadBalancer
   ports:
     # the port that this service should serve on
-  - port: 8080
+  - port: 8091
   selector:
     app: payment-ms
