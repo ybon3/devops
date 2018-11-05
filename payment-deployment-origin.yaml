@@ -1,0 +1,57 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: payment-ms
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: payment-ms
+    spec:
+      containers:
+      - name: payment-ms
+        image: eshopaksabfd.azurecr.io/payment-ms:latest
+        ports:
+        - containerPort: 443
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+            
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-ms
+spec:
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    app: payment-ms
+  type: ClusterIP
+  
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: payment-ms
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: payment-ms
+          servicePort: 443
+        path: /
