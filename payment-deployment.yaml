@@ -19,7 +19,7 @@ spec:
         image: eshopaksabfd.azurecr.io/payment-ms:latest
         ports:
         - port: 80
-          targetPort: 80
+          #targetPort: 80
         resources:
           requests:
             cpu: 250m
