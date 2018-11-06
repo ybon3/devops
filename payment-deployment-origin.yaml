@@ -33,8 +33,8 @@ metadata:
 spec:
   ports:
   - port: 443
-#    protocol: TCP
-#    targetPort: 443
+    protocol: TCP
+    targetPort: 443
   selector:
     app: payment-ms
   type: ClusterIP
@@ -45,12 +45,13 @@ kind: Ingress
 metadata:
   name: payment-ms
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - http:
+  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
+    http:
       paths:
-      - path: /testpath
-        backend:
+      - backend:
           serviceName: payment-ms
-          servicePort: 443
+          servicePort: 80
+        path: /
