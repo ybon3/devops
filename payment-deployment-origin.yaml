@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: payment-ms
@@ -38,20 +38,3 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
-  
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: payment-ms
-  annotations:
-    kubernetes.io/ingress.class: addon-http-application-routing
-spec:
-  rules:
-  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
-    http:
-      paths:
-      - backend:
-          serviceName: payment-ms
-          servicePort: 443
-        path: /
