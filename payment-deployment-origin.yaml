@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: payment-ms
-        image: eshopaksabfd.azurecr.io/eshopaks:30
+        image: eshopaksabfd.azurecr.io/$(Parameters.imageName)
         ports:
         - containerPort: 443
         resources:
