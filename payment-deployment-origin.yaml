@@ -34,7 +34,7 @@ spec:
   ports:
   - port: 443
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   selector:
     app: payment-ms
   type: ClusterIP
@@ -54,4 +54,4 @@ spec:
       - path: /
         backend:
           serviceName: payment-ms
-          servicePort: 8080
+          servicePort: 80
