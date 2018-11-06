@@ -53,5 +53,5 @@ spec:
       paths:
       - backend:
           serviceName: payment-ms
-          servicePort: 80
+          servicePort: 443
         path: /
