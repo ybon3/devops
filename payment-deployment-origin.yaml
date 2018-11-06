@@ -51,7 +51,7 @@ spec:
   - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
     http:
       paths:
-      - backend:
+      - path: /
+        backend:
           serviceName: payment-ms
           servicePort: 443
-        path: /
