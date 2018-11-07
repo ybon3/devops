@@ -17,6 +17,7 @@ spec:
       containers:
       - name: payment-ms
         image: eshopaksabfd.azurecr.io/payment-ms:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8091
         resources:
