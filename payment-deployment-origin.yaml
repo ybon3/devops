@@ -38,7 +38,7 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
-
+  
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -51,7 +51,7 @@ spec:
   - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: payment-ms
           servicePort: 80
+        path: /
