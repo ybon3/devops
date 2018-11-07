@@ -1,0 +1,58 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: order-ms
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: order-ms
+    spec:
+      containers:
+      - name: order-ms
+        image: eshopaksabfd.azurecr.io/order-ms:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8090
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+            
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-ms
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8090
+  selector:
+    app: order-ms
+  type: ClusterIP
+  
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: order-ms
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: order-ms.b88b6fc891c546469957.eastus.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: order-ms
+          servicePort: 80
+        path: /
