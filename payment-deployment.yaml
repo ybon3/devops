@@ -32,6 +32,8 @@ kind: Service
 metadata:
   name: payment-ms
 spec:
+  loadBalancerIP: 40.76.2.102
+  type: LoadBalancer
   ports:
   - port: 80
     protocol: TCP
@@ -39,8 +41,6 @@ spec:
   selector:
     app: payment-ms
   #type: ClusterIP
-  loadBalancerIP: 40.76.2.102
-  type: LoadBalancer
 
 ---
 apiVersion: extensions/v1beta1
