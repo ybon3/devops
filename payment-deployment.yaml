@@ -48,7 +48,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
-  loadBalancerIP: 40.76.2.102
   rules:
   - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
     http:
