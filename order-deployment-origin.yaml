@@ -44,12 +44,12 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: payment-ms
+  name: order-ms
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
+  - host: order-ms.b88b6fc891c546469957.eastus.aksapp.io
     http:
       paths:
       - backend:
