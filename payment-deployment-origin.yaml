@@ -32,6 +32,7 @@ kind: Service
 metadata:
   name: payment-ms
 spec:
+  loadBalancerIP: 40.76.2.102
   ports:
   - port: 80
     protocol: TCP
