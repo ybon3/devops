@@ -49,10 +49,10 @@ metadata:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: order-ms.b88b6fc891c546469957.eastus.aksapp.io
+  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
     http:
       paths:
       - backend:
           serviceName: order-ms
           servicePort: 8090
-        path: /
+        path: /test
