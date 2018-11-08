@@ -38,7 +38,6 @@ spec:
     targetPort: 8091
   selector:
     app: payment-ms
-  #type: ClusterIP
   
 ---
 apiVersion: extensions/v1beta1
