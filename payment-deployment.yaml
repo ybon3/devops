@@ -39,6 +39,10 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
+status:
+  loadBalancer:
+    ingress:
+    - ip: 40.76.2.102
   
 ---
 apiVersion: extensions/v1beta1
