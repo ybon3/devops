@@ -56,7 +56,7 @@ metadata:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
   rules:
-  - host: payment-ms.b88b6fc891c546469957.eastus.aksapp.io
+  - host: payment-ms.64cd2cfd0b224cac8d66.southeastasia.aksapp.io
     http:
       paths:
       - backend:
