@@ -39,7 +39,7 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
-  #loadBalancerIP: ip: 13.67.32.30
+  loadBalancerIP: ip: 13.67.32.30
   #type: LoadBalancer
 #status:
   #loadBalancer:
@@ -54,7 +54,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: addon-http-application-routing
 spec:
-  loadBalancerIP: ip: 13.67.32.30
   rules:
   - host: payment-ms.64cd2cfd0b224cac8d66.southeastasia.aksapp.io
     http:
