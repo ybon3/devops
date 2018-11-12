@@ -39,6 +39,8 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
+  loadBalancerIP: ip: 13.67.32.30
+  type: LoadBalancer
   
 ---
 apiVersion: extensions/v1beta1
