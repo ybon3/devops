@@ -42,10 +42,6 @@ spec:
   #clusterIP: 10.0.137.178
   #loadBalancerIP: 40.76.2.102
   #type: LoadBalancer
-#status:
-  #loadBalancer:
-    #ingress:
-    #- ip: 40.76.2.102
   
 ---
 apiVersion: extensions/v1beta1
@@ -63,4 +59,7 @@ spec:
           serviceName: payment-ms
           servicePort: 80
         path: /
-
+status:
+  loadBalancer:
+    ingress:
+    - ip: 13.67.32.30
