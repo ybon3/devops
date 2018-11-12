@@ -63,3 +63,4 @@ spec:
           serviceName: payment-ms
           servicePort: 80
         path: /
+
