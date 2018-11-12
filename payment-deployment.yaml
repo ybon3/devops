@@ -39,13 +39,13 @@ spec:
   selector:
     app: payment-ms
   type: ClusterIP
-  #clusterIP: 10.0.137.178
-  #loadBalancerIP: 40.76.2.102
-  #type: LoadBalancer
-status:
-  loadBalancer:
-    ingress:
-    - ip: 13.67.32.30
+  clusterIP: 10.0.137.178
+  loadBalancerIP: ip: 13.67.32.30
+  type: LoadBalancer
+#status:
+  #loadBalancer:
+    #ingress:
+    #- ip: 13.67.32.30
   
 ---
 apiVersion: extensions/v1beta1
