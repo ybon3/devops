@@ -38,14 +38,14 @@ spec:
     targetPort: 8091
   selector:
     app: payment-ms
-  type: ClusterIP
+  #type: ClusterIP
   clusterIP: 10.0.137.178
   loadBalancerIP: ip: 13.67.32.30
   type: LoadBalancer
-#status:
-  #loadBalancer:
-    #ingress:
-    #- ip: 13.67.32.30
+status:
+  loadBalancer:
+    ingress:
+    - ip: 13.67.32.30
   
 ---
 apiVersion: extensions/v1beta1
