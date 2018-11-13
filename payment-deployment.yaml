@@ -1,13 +1,8 @@
-apiVersion: apps/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: payment-ms
 spec:
-  replicas: 1
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
   minReadySeconds: 5 
   template:
     metadata:
@@ -18,6 +13,8 @@ spec:
       - name: payment-ms
         image: eshopaksabfd.azurecr.io/payment-ms:latest
         imagePullPolicy: Always
+        tty: true
+        command: ["payment-ms"]
         ports:
         - containerPort: 8091
         resources:
